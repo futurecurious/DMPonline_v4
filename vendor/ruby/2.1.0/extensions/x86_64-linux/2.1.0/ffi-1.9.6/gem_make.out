@@ -91,33 +91,12 @@ libtool: link: ( cd ".libs" && rm -f "libffi_convenience.la" && ln -s "../libffi
 make[3]: Leaving directory `/var/www/sites/DMPonline_v4/vendor/ruby/2.1.0/gems/ffi-1.9.6/ext/ffi_c/libffi-x86_64-linux'
 make[2]: Leaving directory `/var/www/sites/DMPonline_v4/vendor/ruby/2.1.0/gems/ffi-1.9.6/ext/ffi_c/libffi-x86_64-linux'
 make[1]: Leaving directory `/var/www/sites/DMPonline_v4/vendor/ruby/2.1.0/gems/ffi-1.9.6/ext/ffi_c/libffi-x86_64-linux'
-compiling DataConverter.c
-compiling ffi.c
-compiling LastError.c
-compiling Pointer.c
-compiling Call.c
-Call.c: In function ‘do_blocking_call’:
-Call.c:303: warning: implicit declaration of function ‘rb_thread_call_without_gvl’
-compiling FunctionInfo.c
-compiling Struct.c
-compiling Platform.c
-compiling LongDouble.c
-compiling MethodHandle.c
 compiling Buffer.c
-compiling Types.c
-compiling Type.c
-compiling MemoryPointer.c
-compiling DynamicLibrary.c
-compiling Variadic.c
-compiling ClosurePool.c
-compiling Thread.c
-compiling StructByReference.c
 compiling StructLayout.c
-compiling MappedType.c
-compiling ArrayType.c
-compiling Function.c
-Function.c: In function ‘async_cb_event’:
-Function.c:563: warning: implicit declaration of function ‘rb_thread_call_without_gvl’
+compiling StructByReference.c
+compiling Type.c
+compiling Thread.c
+compiling DataConverter.c
 compiling AbstractMemory.c
 AbstractMemory.c:255: warning: ‘memory_put_longdouble’ defined but not used
 AbstractMemory.c:255: warning: ‘memory_write_longdouble’ defined but not used
@@ -132,7 +111,28 @@ AbstractMemory.c:291: warning: ‘memory_read_bool’ defined but not used
 AbstractMemory.c:291: warning: ‘memory_write_array_of_bool’ defined but not used
 AbstractMemory.c:291: warning: ‘memory_read_array_of_bool’ defined but not used
 AbstractMemory.c:407: warning: ‘memory_read_array_of_string’ defined but not used
+compiling Struct.c
+compiling Types.c
+compiling ClosurePool.c
+compiling Function.c
+Function.c: In function ‘async_cb_event’:
+Function.c:563: warning: implicit declaration of function ‘rb_thread_call_without_gvl’
+compiling MethodHandle.c
+compiling LongDouble.c
+compiling FunctionInfo.c
+compiling MappedType.c
+compiling ffi.c
+compiling Call.c
+Call.c: In function ‘do_blocking_call’:
+Call.c:303: warning: implicit declaration of function ‘rb_thread_call_without_gvl’
+compiling ArrayType.c
+compiling DynamicLibrary.c
+compiling Platform.c
 compiling StructByValue.c
+compiling Variadic.c
+compiling MemoryPointer.c
+compiling Pointer.c
+compiling LastError.c
 linking shared-object ffi_c.so
 
 make "DESTDIR=" install
@@ -156,33 +156,12 @@ make[3]: Entering directory `/var/www/sites/DMPonline_v4/vendor/ruby/2.1.0/gems/
 make[3]: Leaving directory `/var/www/sites/DMPonline_v4/vendor/ruby/2.1.0/gems/ffi-1.9.6/ext/ffi_c/libffi-x86_64-linux'
 make[2]: Leaving directory `/var/www/sites/DMPonline_v4/vendor/ruby/2.1.0/gems/ffi-1.9.6/ext/ffi_c/libffi-x86_64-linux'
 make[1]: Leaving directory `/var/www/sites/DMPonline_v4/vendor/ruby/2.1.0/gems/ffi-1.9.6/ext/ffi_c/libffi-x86_64-linux'
-compiling DataConverter.c
-compiling ffi.c
-compiling LastError.c
-compiling Pointer.c
-compiling Call.c
-Call.c: In function ‘do_blocking_call’:
-Call.c:303: warning: implicit declaration of function ‘rb_thread_call_without_gvl’
-compiling FunctionInfo.c
-compiling Struct.c
-compiling Platform.c
-compiling LongDouble.c
-compiling MethodHandle.c
 compiling Buffer.c
-compiling Types.c
-compiling Type.c
-compiling MemoryPointer.c
-compiling DynamicLibrary.c
-compiling Variadic.c
-compiling ClosurePool.c
-compiling Thread.c
-compiling StructByReference.c
 compiling StructLayout.c
-compiling MappedType.c
-compiling ArrayType.c
-compiling Function.c
-Function.c: In function ‘async_cb_event’:
-Function.c:563: warning: implicit declaration of function ‘rb_thread_call_without_gvl’
+compiling StructByReference.c
+compiling Type.c
+compiling Thread.c
+compiling DataConverter.c
 compiling AbstractMemory.c
 AbstractMemory.c:255: warning: ‘memory_put_longdouble’ defined but not used
 AbstractMemory.c:255: warning: ‘memory_write_longdouble’ defined but not used
@@ -197,7 +176,28 @@ AbstractMemory.c:291: warning: ‘memory_read_bool’ defined but not used
 AbstractMemory.c:291: warning: ‘memory_write_array_of_bool’ defined but not used
 AbstractMemory.c:291: warning: ‘memory_read_array_of_bool’ defined but not used
 AbstractMemory.c:407: warning: ‘memory_read_array_of_string’ defined but not used
+compiling Struct.c
+compiling Types.c
+compiling ClosurePool.c
+compiling Function.c
+Function.c: In function ‘async_cb_event’:
+Function.c:563: warning: implicit declaration of function ‘rb_thread_call_without_gvl’
+compiling MethodHandle.c
+compiling LongDouble.c
+compiling FunctionInfo.c
+compiling MappedType.c
+compiling ffi.c
+compiling Call.c
+Call.c: In function ‘do_blocking_call’:
+Call.c:303: warning: implicit declaration of function ‘rb_thread_call_without_gvl’
+compiling ArrayType.c
+compiling DynamicLibrary.c
+compiling Platform.c
 compiling StructByValue.c
+compiling Variadic.c
+compiling MemoryPointer.c
+compiling Pointer.c
+compiling LastError.c
 linking shared-object ffi_c.so
-/usr/bin/install -c -m 0755 ffi_c.so ./.gem.20141104-19883-v226hu
+/usr/bin/install -c -m 0755 ffi_c.so ./.gem.20150218-11771-16dzfy4
 installing default ffi_c libraries
