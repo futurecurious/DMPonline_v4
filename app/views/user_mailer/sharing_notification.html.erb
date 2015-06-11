@@ -1,12 +1,17 @@
-<p>Hello <%= @project_group.user.name %></p>
+<p><%= t('helpers.greeting') %> <%= @project_group.user.name %></p>
 
 <% 
-access_level = "read-only"
+access_level = t('helpers.project.share.email.read_only')
 if @project_group.access_level == 2 then
-	access_level = "editor"
+	access_level = t('helpers.project.share.email.editor')
 elsif @project_group.access_level == 3 then
-	access_level = "co-owner"
+	access_level = t('helpers.project.share.email.co_owner')
 end
 %>
 
-<p>You have been given <%= access_level %> access to the DMP "<%= link_to @project_group.project.title, project_path(@project_group.project, :only_path => false) %>".</p>
+<%
+<%= project_link = link_to @project_group.project.title, project_path(@project_group.project, :only_path => false)
+%>
+
+<p><%= t('helpers.project.share.email.text') %>
+</p>
