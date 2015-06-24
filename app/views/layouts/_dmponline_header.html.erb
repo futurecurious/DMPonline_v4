@@ -6,6 +6,12 @@
 			<%= link_to( image_tag("logo.jpg"), root_path)%>
 		</div>
 	</div>
+
+        <!-- this is in a rough form to show locale switch, and should be styled in a more elegant way -->
+        <div class="locale">
+  			<%= link_to_unless_current "English", locale: "en" %> |
+      			<%= link_to_unless_current "French", locale: "fr" %>
+      	</div> 
 	<div class="header_right">	
 		<div class="signIn">
 			<ul class="navbar">

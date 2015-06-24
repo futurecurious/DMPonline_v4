@@ -287,6 +287,10 @@ en:
 
     user_name: "Email address"
     email: "Email"
+    email_tip: "This must be a valid email address - a message will be sent to it for confirmation."
+    organisation_name_tip: "Please enter the name of your organisation."
+    password_tip: "This must be at least 8 characters long."
+    password_reentry_tip: "This must match what you entered in the previous field."
     valid_email: "You must enter a valid email address."
     user_details_text_html: "<p>Please note that your email address is used as your username. If you change this, remember to use your new email address on sign in.</p>"
     user_details_paragraph_html: "You can edit any of the details below."
@@ -356,10 +360,11 @@ en:
     Once you have created and/or linked your account, you'll be able to sign in with your institutional credentials directly."
     shibboleth_linked_text: "Your account is linked to your institutional credentials."
     shibboleth_to_link_text: "Link your DMPonline account to your institutional credentials"
+    shibboleth_to_link_question: "link your DMPonline account to your institutional credentials?" 
     shibboleth_unlink_label: "Unlink your institutional credentials"
     shibboleth_unlink_alert: "Unlink institutional credentials alert"
     shibboleth_unlink_dialog_text: "<p>You are about to unlink DMPonline of your institutional credentials, would you like to continue?</p>"
-
+    shibboleth_wait_confirmation: "Currently waiting confirmation for:"
 
     section_label: "Section"
     sections_label: "Sections"
@@ -398,7 +403,46 @@ en:
       clear_by: "Comment removed by"
       retracted: "Comment removed by you"
       
-    
+   
+    failures:
+      email_exists: "That email address is already registered."
+      registration_error: "Error processing registration. Please check that you have entered a valid email address and that your chosen password is at least 8 characters long."
+    notices:
+      successfully_updated: "Details successfully updated. "
+      sharing_updated: "Sharing details successfully updated."
+      invitation_issued: "Invitation issued successfully."
+      enter_email: "Please enter an email address."
+      access_removed: "Access removed."
+      user_added: "User added to project."
+      answer_recorded: "Answer was successfully recorded."
+      answer_saving_error: "There was an error saving the answer."
+      answer_not_changed: "No change in answer content - not saved."
+      comment_created: "Comment was successfully created."
+      comment_updated: "Comment was successfully updated."
+      theme_created: "Theme was successfully created."
+      theme_updated: "Theme was successfully updated."
+      page_created: "Page was successfully created."
+      page_updated: "Page was successfully updated."
+      user_created: "User was successfully created."
+      project_created: "Project was successfully created."
+      user_org_role_created: "User org role was successfully created."
+      user_org_role_updated: "User org role was successfully updated."
+      user_role_created: "User role type was successfully created."
+      user_role_updated: "User role type was successfully updated."
+      user_status_created: "User status was successfully created."
+      user_status_updated: "User status was successfully updated."
+      user_type_created: "User type was successfully created."
+      user_type_updated: "User type was successfully updated."
+      link_account_question: "Would you like to"
+      account_no_access: "This account does not have access to that plan."
+      plan_updated: "Plan was successfully updated."
+      settings_updated: "Settings updated successfully."
+      
+    progress_bar:
+      answered: "answered"
+      question: "question"
+      questions: "questions" 
+
     org_type:
       funder: "Funder"
       institution: "Institution"
@@ -475,6 +519,9 @@ Select what format you wish to use and click to 'Export'.</p>"
         edit: "Edit"
         read_only: "Read only"
         locked_section_text: "This section is locked for editing by "
+        email_text: "<p>You have been given '%{access_level}' access to the DMP %{project_link}.</p>"
+        permission_email_text: "<p>Your permissions relating to the DMP '%{project_link}' have changed. You now have %{access_level} access.</p>"
+        access_removed_email_text: "<p>Your access to the DMP '%{project_title}' has been removed.</p>"
       create_page:
         title: "Create a new plan"
         desc_html: "<p>Please select from the following drop-downs so we can determine what questions and guidance should be displayed in your plan.</p>
@@ -554,6 +601,10 @@ Select what format you wish to use and click to 'Export'.</p>"
           invalid_font_face: "Invalid font face"
           unknown_key: "Unknown formatting setting"
           invalid_max_pages: "Invalid maximum pages"
+    mailer:
+      sharing_notification: "You have been given access to a Data Management Plan"
+      permissions_change: "DMP permissions changed"
+      access_removed: "DMP access removed"
 
   about_page:
     title: "About DMPonline"

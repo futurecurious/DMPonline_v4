@@ -5,8 +5,8 @@
 	</p>
 	<% cookies[:show_shib_link] = { value: 'show_shib_link', expires: 3.hours.from_now } %>
 <% end %>	
-	
-<div class='white_background'>
+<!--<div class='white_background'>-->
+<div class="dmp_details_body">
 	<br />
 	<!-- call the register form  block-->	
 	<%= render :partial => 'shared/register_form', locals: {extended: true} %>
