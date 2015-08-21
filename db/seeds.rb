@@ -22,9 +22,12 @@ organisation_types = {
  }
 
 organisation_types.each do |org_type, details|
-  organisation_type = OrganisationType.new
-  organisation_type.name = details[:name]
-  organisation_type.save!
+  exists = OrganisationType.find_by_name(details[:name])  
+  if !exists
+    organisation_type = OrganisationType.new
+    organisation_type.name = details[:name]
+    organisation_type.save!
+  end
 end
 
 
@@ -46,25 +49,31 @@ end
  }
 
 organisations.each do |org, details|
-   organisation = Organisation.new
-   organisation.name = details[:name]
-   organisation.abbreviation = details[:abbreviation]
-   organisation.domain = details[:domain]
-   organisation.sort_name = details[:sort_name]
-   organisation.organisation_type = OrganisationType.find_by_name(details[:organisation_type])
-   organisation.save!
+   exists = Organisation.find_by_name(details[:name])
+   if !exists
+     organisation = Organisation.new
+     organisation.name = details[:name]
+     organisation.abbreviation = details[:abbreviation]
+     organisation.domain = details[:domain]
+     organisation.sort_name = details[:sort_name]
+     organisation.organisation_type = OrganisationType.find_by_name(details[:organisation_type])
+     organisation.save!
+   end
 end
 
 # uses encrypted password.  See passwrod safe!
-admin = User.new(
-  {firstname: "DMP", surname: "Administrator", email: "dittest@ualberta.ca",
-   password: "password", password_confirmation: "password"}
-)
-admin.encrypted_password = "$2a$10$q7XUQxvbFb1QcYhrngqcd..sM8.DsviZUxUBwDpC7ZmuohHrkOeZm"
-admin.add_role(:admin)
-admin.organisation_id = Organisation.find_by_name('University of Alberta').id
-admin.skip_confirmation!
-admin.save!
+exists = User.find_by_email('dittest@ualberta.ca')
+if !exists
+ 
+  admin = User.new(
+    {firstname: "DMP", surname: "Administrator", email: "dittest@ualberta.ca",
+     password: "password", password_confirmation: "password"})
+  admin.encrypted_password = "$2a$10$q7XUQxvbFb1QcYhrngqcd..sM8.DsviZUxUBwDpC7ZmuohHrkOeZm"
+  admin.add_role(:admin)
+  admin.organisation_id = Organisation.find_by_name('University of Alberta').id
+  admin.skip_confirmation!
+  admin.save!
+end
 
  question_formats = {
    "Text area" => {
@@ -88,9 +97,12 @@ admin.save!
  }
 
  question_formats.each do |qf, details|
-   question_format = QuestionFormat.new
-   question_format.title = details[:title]
-   question_format.save!
+   exists = QuestionFormat.find_by_title(details[:title])
+   if !exists
+     question_format = QuestionFormat.new
+     question_format.title = details[:title]
+     question_format.save!
+   end
  end
 
 
@@ -104,9 +116,12 @@ user_statuses = {
 }
 
 user_statuses.each do |us, details|
-  user_status = UserStatus.new
-  user_status.name = details[:name]
-  user_status.save!
+  exists = UserStatus.find_by_name(details[:name])
+  if !exists
+    user_status = UserStatus.new
+    user_status.name = details[:name]
+    user_status.save!
+  end
 end
     
 themes = {
@@ -253,11 +268,14 @@ themes = {
 }
 
  themes.each do |t, details|
-   theme = Theme.new
-   theme.title = details[:title]
-   theme.locale = details[:locale]
-   theme.description = details[:description]
-   theme.save!
+   exists = Theme.find_by_title(details[:title])
+   if !exists
+     theme = Theme.new
+     theme.title = details[:title]
+     theme.locale = details[:locale]
+     theme.description = details[:description]
+     theme.save!
+  end
  end
 
 user_org_roles = {
@@ -286,14 +304,17 @@ templates = {
 }
 
  templates.each do |t, details|
-   template = Dmptemplate.new
-   template.title = details[:title]
-   template.description = details[:description]
-   template.published = details[:published]
-   template.locale = details[:locale]
-   template.is_default = details[:is_default]
-   template.organisation = Organisation.find_by_name(details[:organisation])
-   template.save!
+   exists = Dmptemplate.find_by_title(details[:title])
+   if !exists
+     template = Dmptemplate.new
+     template.title = details[:title]
+     template.description = details[:description]
+     template.published = details[:published]
+     template.locale = details[:locale]
+     template.is_default = details[:is_default]
+     template.organisation = Organisation.find_by_name(details[:organisation])
+     template.save!
+   end
  end
 
 phases = {
@@ -305,11 +326,14 @@ phases = {
 }
 
  phases.each do |p, details|
-   phase = Phase.new
-   phase.title = details[:title]
-   phase.number = details[:number]
-   phase.dmptemplate = Dmptemplate.find_by_title(details[:template])
-   phase.save!
+  exists = Phase.find_by_title(details[:title])
+  if !exists
+    phase = Phase.new
+    phase.title = details[:title]
+    phase.number = details[:number]
+    phase.dmptemplate = Dmptemplate.find_by_title(details[:template])
+    phase.save!
+  end
  end
 
 versions = {
@@ -322,12 +346,15 @@ versions = {
 }
 
  versions.each do |v, details|
-   version = Version.new
-   version.title = details[:title]
-   version.number = details[:number]
-   version.published = details[:published]
-   version.phase = Phase.find_by_title(details[:phase])
-   version.save!
+  exists = Version.find_by_title(details[:title])
+  if !exists
+    version = Version.new
+    version.title = details[:title]
+    version.number = details[:number]
+    version.published = details[:published]
+    version.phase = Phase.find_by_title(details[:phase])
+    version.save!
+  end
  end
 
 sections = {
@@ -370,13 +397,17 @@ sections = {
 }
 
  sections.each do |s, details|
-   section = Section.new
-   section.title = details[:title]
-   section.number = details[:number]
-   section.description = details[:description]
-   section.version = Version.find_by_title(details[:version])
-   section.organisation = Organisation.find_by_name(details[:organisation])
-   section.save!
+   s = Section.find_by_title(details[:title])
+   exists = s && s.version.to_s == details[:version]
+   if !exists
+     section = Section.new
+     section.title = details[:title]
+     section.number = details[:number]
+     section.description = details[:description]
+     section.version = Version.find_by_title(details[:version])
+     section.organisation = Organisation.find_by_name(details[:organisation])
+     section.save!
+   end
  end
 
 questions = {
@@ -555,12 +586,15 @@ questions = {
 }
 
  questions.each do |q, details|
-   question = Question.new
-   question.text = details[:text]
-   question.number = details[:number]
-   question.guidance = details[:guidance]
-   question.section = Section.find_by_title(details[:section])
-   question.question_format_id = QuestionFormat.find_by_title(details[:question_format]).id
-   question.save!
+  q = Question.find_by_text(details[:text])
+  exists = q && q.section.to_s == details[:section]
+  if !exists
+    question = Question.new
+    question.text = details[:text]
+    question.number = details[:number]
+    question.guidance = details[:guidance]
+    question.section = Section.find_by_title(details[:section])
+    question.question_format_id = QuestionFormat.find_by_title(details[:question_format]).id
+    question.save!
+  end
  end
-
