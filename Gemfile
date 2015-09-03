@@ -80,6 +80,7 @@ gem 'htmltoword'
 group :development, :test do
   gem 'rspec-rails' 
   gem 'rspec'
+  gem 'rspec-legacy_formatters'
   gem 'selenium-webdriver'
   gem 'mail'
   gem 'pdf-reader'
