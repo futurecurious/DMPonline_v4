@@ -9,7 +9,7 @@ def destroy_plan
     dmp_plan = @driver.find_element(:xpath, "//td[text()='#{@properties['dmp_plan']['name']}']").find_element(:xpath, '..')
     dmp_plan.find_element(:link, "Delete").click
     expect(close_alert_and_get_its_text()).to start_with "Are you sure you want to delete this"
-    expect(@driver.find_element(:css, "div.flash.flash_notice").text).to eq "Project was successfully destroyed."
+    expect(@driver.find_element(:css, "div.flash.flash_notice").text).to eq("Project was successfully destroyed.")
     sign_out_user
 
 end
@@ -119,7 +119,8 @@ def edit_plan
     @driver.find_element(:id, "project_principal_investigator").clear
     @driver.find_element(:id, "project_principal_investigator").send_keys "Dit Test"
     @driver.find_element(:name, "commit").click
-    expect (@driver.find_element(:css, "p.alert.alert-notice").text).to eq "Project was successfully updated." 
+    notice = @driver.find_element(:css, "p.alert.alert-notice").text
+    expect(notice).to eq("Project was successfully updated.")
     puts("now editing answers")
 
     @driver.find_element(:link, "University of Alberta Data Management Questions").click

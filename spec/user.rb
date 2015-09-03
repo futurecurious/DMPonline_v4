@@ -22,7 +22,7 @@ def create_a_new_user
     expect(element_present?(:xpath, "(//input[@name='commit'])[2]")).to be true
     @driver.find_element(:xpath, "(//input[@name='commit'])[2]").click
     !60.times{ break if (element_present?(:css, "p.alert.alert-notice") || element_present?(:css, "p.alert.alert-error") rescue false); sleep 1 }
-    expect(@driver.find_element(:css, "p.alert.alert-notice").text).to eq "A message with a confirmation link has been sent to your email address. Please open the link to activate your account. If you do not receive the confirmation email, please check your spam filter." 
+    expect(@driver.find_element(:css, "p.alert.alert-notice").text).to eq "A message with a confirmation link has been sent to your email address. Please open the link to activate your account." 
 
 end
 
@@ -68,7 +68,6 @@ def create_and_verify_user
     sleep 15
     confirmation_url = get_confirmation_url_from_email(date)
     @driver.get(confirmation_url)
-    login_as_user(@properties['dmp_user']['name'], @properties['dmp_user']['password']) 
     expect(@driver.find_element(:css, "a.dropdown-toggle").text).to eq "Signed in as " + @properties['dmp_user']['name'] 
 end
 
