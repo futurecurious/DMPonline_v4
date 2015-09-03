@@ -81,7 +81,7 @@ group :development, :test do
   gem 'rspec-rails' 
   gem 'rspec'
   gem 'rspec-core'
-  gem 'rspec-legacy_formatters'
+  gem 'rspec-legacy_formatters', :git => 'git://github.com/rspec/rspec-legacy_formatters.git'
   gem 'selenium-webdriver'
   gem 'mail'
   gem 'pdf-reader'
