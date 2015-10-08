@@ -20,10 +20,13 @@
 		    	}
 		  	</style>
 		<![endif]-->
-		 <% if (user_signed_in?) && (current_user.organisation_id == 7) then %>
+                 
+		 <% if (user_signed_in?) && (current_user.organisation_id == Organisation.where({'abbreviation'=> 'UBC'}).first.id) then %>
 		
 	                	<%= stylesheet_link_tag "application_ubc" %>
 
+                 <% elsif (user_signed_in?) && (current_user.organisation_id == Organisation.where({'abbreviation'=> 'UAlberta'}).first.id) then %>
+                                <%= stylesheet_link_tag "application_ua" %>
 		<% else %>
 			<%= stylesheet_link_tag "application" %>
 		<% end %>
@@ -60,9 +63,11 @@
 	<body class="dmponline">
 		<div class="wrap">
 	    	<!-- header rendering -->
-	         <% if (user_signed_in?) && (current_user.organisation_id == 7) then %>
-			 <%= render "layouts/dmponline_header_ubc" %>
+                 <% if (user_signed_in?) && (current_user.organisation_id == Organisation.where({'abbreviation'=> 'UBC'}).first.id) then %>
 
+                                 <%= render "layouts/dmponline_header_ubc" %>
+                 <% elsif (user_signed_in?) && (current_user.organisation_id == Organisation.where({'abbreviation'=> 'UAlberta'}).first.id) then %>
+                                  <%= render "layouts/dmponline_header_ua" %> 
                 <% else %>
                		 <%= render "layouts/dmponline_header" %>
 		<% end %>
