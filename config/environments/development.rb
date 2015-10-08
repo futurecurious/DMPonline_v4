@@ -65,5 +65,7 @@ DMPonline4::Application.configure do
 	
 config.action_mailer.perform_deliveries = true
 #config.action_mailer.raise_delivery_errors = true
+
+BetterErrors::Middleware.allow_ip! '192.168.0.1/16'
 	  
 end

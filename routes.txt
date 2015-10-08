@@ -1,0 +1,483 @@
+DEPRECATION WARNING: Support for Rails < 4.1.0 will be dropped. (called from warn at /usr/lib64/ruby/2.1.0/forwardable.rb:183)
+                        new_user_session GET      /users/sign_in(.:format)                                                  sessions#new
+                            user_session POST     /users/sign_in(.:format)                                                  sessions#create
+                    destroy_user_session DELETE   /users/sign_out(.:format)                                                 sessions#destroy
+                 user_omniauth_authorize GET|POST /users/auth/:provider(.:format)                                           users/omniauth_callbacks#passthru {:provider=>/shibboleth/}
+                  user_omniauth_callback GET|POST /users/auth/:action/callback(.:format)                                    users/omniauth_callbacks#:action
+                           user_password POST     /users/password(.:format)                                                 passwords#create
+                       new_user_password GET      /users/password/new(.:format)                                             passwords#new
+                      edit_user_password GET      /users/password/edit(.:format)                                            passwords#edit
+                                         PUT      /users/password(.:format)                                                 passwords#update
+                cancel_user_registration GET      /users/cancel(.:format)                                                   registrations#cancel
+                       user_registration POST     /users(.:format)                                                          registrations#create
+                   new_user_registration GET      /users/sign_up(.:format)                                                  registrations#new
+                  edit_user_registration GET      /users/edit(.:format)                                                     registrations#edit
+                                         PUT      /users(.:format)                                                          registrations#update
+                                         DELETE   /users(.:format)                                                          registrations#destroy
+                       user_confirmation POST     /users/confirmation(.:format)                                             confirmations#create
+                   new_user_confirmation GET      /users/confirmation/new(.:format)                                         confirmations#new
+                                         GET      /users/confirmation(.:format)                                             confirmations#show
+                  accept_user_invitation GET      /users/invitation/accept(.:format)                                        devise/invitations#edit
+                  remove_user_invitation GET      /users/invitation/remove(.:format)                                        devise/invitations#destroy
+                         user_invitation POST     /users/invitation(.:format)                                               devise/invitations#create
+                     new_user_invitation GET      /users/invitation/new(.:format)                                           devise/invitations#new
+                                         PUT      /users/invitation(.:format)                                               devise/invitations#update
+                                contacts GET      /contacts(.:format)                                                       contacts#index {:controllers=>{:contacts=>"contacts"}}
+                                         POST     /contacts(.:format)                                                       contacts#create {:controllers=>{:contacts=>"contacts"}}
+                             new_contact GET      /contacts/new(.:format)                                                   contacts#new {:controllers=>{:contacts=>"contacts"}}
+                            edit_contact GET      /contacts/:id/edit(.:format)                                              contacts#edit {:controllers=>{:contacts=>"contacts"}}
+                                 contact GET      /contacts/:id(.:format)                                                   contacts#show {:controllers=>{:contacts=>"contacts"}}
+                                         PUT      /contacts/:id(.:format)                                                   contacts#update {:controllers=>{:contacts=>"contacts"}}
+                                         DELETE   /contacts/:id(.:format)                                                   contacts#destroy {:controllers=>{:contacts=>"contacts"}}
+                user_omniauth_shibboleth GET      /auth/shibboleth(.:format)                                                users/omniauth_shibboleth_request#redirect
+                   user_shibboleth_assoc GET      /auth/shibboleth/assoc(.:format)                                          users/omniauth_shibboleth_request#associate
+                                    root          /                                                                         home#index
+                              admin_root          /admin(.:format)                                                          admin/dashboard#index
+        batch_action_admin_user_statuses POST     /admin/user_statuses/batch_action(.:format)                               admin/user_statuses#batch_action
+                     admin_user_statuses GET      /admin/user_statuses(.:format)                                            admin/user_statuses#index
+                                         POST     /admin/user_statuses(.:format)                                            admin/user_statuses#create
+                   new_admin_user_status GET      /admin/user_statuses/new(.:format)                                        admin/user_statuses#new
+                  edit_admin_user_status GET      /admin/user_statuses/:id/edit(.:format)                                   admin/user_statuses#edit
+                       admin_user_status GET      /admin/user_statuses/:id(.:format)                                        admin/user_statuses#show
+                                         PUT      /admin/user_statuses/:id(.:format)                                        admin/user_statuses#update
+                                         DELETE   /admin/user_statuses/:id(.:format)                                        admin/user_statuses#destroy
+             batch_action_admin_sections POST     /admin/sections/batch_action(.:format)                                    admin/sections#batch_action
+                          admin_sections GET      /admin/sections(.:format)                                                 admin/sections#index
+                                         POST     /admin/sections(.:format)                                                 admin/sections#create
+                       new_admin_section GET      /admin/sections/new(.:format)                                             admin/sections#new
+                      edit_admin_section GET      /admin/sections/:id/edit(.:format)                                        admin/sections#edit
+                           admin_section GET      /admin/sections/:id(.:format)                                             admin/sections#show
+                                         PUT      /admin/sections/:id(.:format)                                             admin/sections#update
+                                         DELETE   /admin/sections/:id(.:format)                                             admin/sections#destroy
+              batch_action_admin_options POST     /admin/options/batch_action(.:format)                                     admin/options#batch_action
+                           admin_options GET      /admin/options(.:format)                                                  admin/options#index
+                                         POST     /admin/options(.:format)                                                  admin/options#create
+                        new_admin_option GET      /admin/options/new(.:format)                                              admin/options#new
+                       edit_admin_option GET      /admin/options/:id/edit(.:format)                                         admin/options#edit
+                            admin_option GET      /admin/options/:id(.:format)                                              admin/options#show
+                                         PUT      /admin/options/:id(.:format)                                              admin/options#update
+                                         DELETE   /admin/options/:id(.:format)                                              admin/options#destroy
+                batch_action_admin_users POST     /admin/users/batch_action(.:format)                                       admin/users#batch_action
+                             admin_users GET      /admin/users(.:format)                                                    admin/users#index
+                                         POST     /admin/users(.:format)                                                    admin/users#create
+                          new_admin_user GET      /admin/users/new(.:format)                                                admin/users#new
+                         edit_admin_user GET      /admin/users/:id/edit(.:format)                                           admin/users#edit
+                              admin_user GET      /admin/users/:id(.:format)                                                admin/users#show
+                                         PUT      /admin/users/:id(.:format)                                                admin/users#update
+                                         DELETE   /admin/users/:id(.:format)                                                admin/users#destroy
+                         admin_dashboard GET      /admin/dashboard(.:format)                                                admin/dashboard#index
+           batch_action_admin_user_types POST     /admin/user_types/batch_action(.:format)                                  admin/user_types#batch_action
+                        admin_user_types GET      /admin/user_types(.:format)                                               admin/user_types#index
+                                         POST     /admin/user_types(.:format)                                               admin/user_types#create
+                     new_admin_user_type GET      /admin/user_types/new(.:format)                                           admin/user_types#new
+                    edit_admin_user_type GET      /admin/user_types/:id/edit(.:format)                                      admin/user_types#edit
+                         admin_user_type GET      /admin/user_types/:id(.:format)                                           admin/user_types#show
+                                         PUT      /admin/user_types/:id(.:format)                                           admin/user_types#update
+                                         DELETE   /admin/user_types/:id(.:format)                                           admin/user_types#destroy
+              settings_admin_dmptemplate GET      /admin/dmptemplates/:id/settings(.:format)                                admin/dmptemplates#settings
+       update_settings_admin_dmptemplate PUT      /admin/dmptemplates/:id/update_settings(.:format)                         admin/dmptemplates#update_settings
+         batch_action_admin_dmptemplates POST     /admin/dmptemplates/batch_action(.:format)                                admin/dmptemplates#batch_action
+                      admin_dmptemplates GET      /admin/dmptemplates(.:format)                                             admin/dmptemplates#index
+                                         POST     /admin/dmptemplates(.:format)                                             admin/dmptemplates#create
+                   new_admin_dmptemplate GET      /admin/dmptemplates/new(.:format)                                         admin/dmptemplates#new
+                  edit_admin_dmptemplate GET      /admin/dmptemplates/:id/edit(.:format)                                    admin/dmptemplates#edit
+                       admin_dmptemplate GET      /admin/dmptemplates/:id(.:format)                                         admin/dmptemplates#show
+                                         PUT      /admin/dmptemplates/:id(.:format)                                         admin/dmptemplates#update
+                                         DELETE   /admin/dmptemplates/:id(.:format)                                         admin/dmptemplates#destroy
+               batch_action_admin_phases POST     /admin/phases/batch_action(.:format)                                      admin/phases#batch_action
+                            admin_phases GET      /admin/phases(.:format)                                                   admin/phases#index
+                                         POST     /admin/phases(.:format)                                                   admin/phases#create
+                         new_admin_phase GET      /admin/phases/new(.:format)                                               admin/phases#new
+                        edit_admin_phase GET      /admin/phases/:id/edit(.:format)                                          admin/phases#edit
+                             admin_phase GET      /admin/phases/:id(.:format)                                               admin/phases#show
+                                         PUT      /admin/phases/:id(.:format)                                               admin/phases#update
+                                         DELETE   /admin/phases/:id(.:format)                                               admin/phases#destroy
+      batch_action_admin_guidance_groups POST     /admin/guidance_groups/batch_action(.:format)                             admin/guidance_groups#batch_action
+                   admin_guidance_groups GET      /admin/guidance_groups(.:format)                                          admin/guidance_groups#index
+                                         POST     /admin/guidance_groups(.:format)                                          admin/guidance_groups#create
+                new_admin_guidance_group GET      /admin/guidance_groups/new(.:format)                                      admin/guidance_groups#new
+               edit_admin_guidance_group GET      /admin/guidance_groups/:id/edit(.:format)                                 admin/guidance_groups#edit
+                    admin_guidance_group GET      /admin/guidance_groups/:id(.:format)                                      admin/guidance_groups#show
+                                         PUT      /admin/guidance_groups/:id(.:format)                                      admin/guidance_groups#update
+                                         DELETE   /admin/guidance_groups/:id(.:format)                                      admin/guidance_groups#destroy
+             batch_action_admin_versions POST     /admin/versions/batch_action(.:format)                                    admin/versions#batch_action
+                          admin_versions GET      /admin/versions(.:format)                                                 admin/versions#index
+                                         POST     /admin/versions(.:format)                                                 admin/versions#create
+                       new_admin_version GET      /admin/versions/new(.:format)                                             admin/versions#new
+                      edit_admin_version GET      /admin/versions/:id/edit(.:format)                                        admin/versions#edit
+                           admin_version GET      /admin/versions/:id(.:format)                                             admin/versions#show
+                                         PUT      /admin/versions/:id(.:format)                                             admin/versions#update
+                                         DELETE   /admin/versions/:id(.:format)                                             admin/versions#destroy
+    batch_action_admin_suggested_answers POST     /admin/suggested_answers/batch_action(.:format)                           admin/suggested_answers#batch_action
+                 admin_suggested_answers GET      /admin/suggested_answers(.:format)                                        admin/suggested_answers#index
+                                         POST     /admin/suggested_answers(.:format)                                        admin/suggested_answers#create
+              new_admin_suggested_answer GET      /admin/suggested_answers/new(.:format)                                    admin/suggested_answers#new
+             edit_admin_suggested_answer GET      /admin/suggested_answers/:id/edit(.:format)                               admin/suggested_answers#edit
+                  admin_suggested_answer GET      /admin/suggested_answers/:id(.:format)                                    admin/suggested_answers#show
+                                         PUT      /admin/suggested_answers/:id(.:format)                                    admin/suggested_answers#update
+                                         DELETE   /admin/suggested_answers/:id(.:format)                                    admin/suggested_answers#destroy
+       batch_action_admin_project_groups POST     /admin/project_groups/batch_action(.:format)                              admin/project_groups#batch_action
+                    admin_project_groups GET      /admin/project_groups(.:format)                                           admin/project_groups#index
+                                         POST     /admin/project_groups(.:format)                                           admin/project_groups#create
+                 new_admin_project_group GET      /admin/project_groups/new(.:format)                                       admin/project_groups#new
+                edit_admin_project_group GET      /admin/project_groups/:id/edit(.:format)                                  admin/project_groups#edit
+                     admin_project_group GET      /admin/project_groups/:id(.:format)                                       admin/project_groups#show
+                                         PUT      /admin/project_groups/:id(.:format)                                       admin/project_groups#update
+                                         DELETE   /admin/project_groups/:id(.:format)                                       admin/project_groups#destroy
+       batch_action_admin_user_org_roles POST     /admin/user_org_roles/batch_action(.:format)                              admin/user_org_roles#batch_action
+                    admin_user_org_roles GET      /admin/user_org_roles(.:format)                                           admin/user_org_roles#index
+                                         POST     /admin/user_org_roles(.:format)                                           admin/user_org_roles#create
+                 new_admin_user_org_role GET      /admin/user_org_roles/new(.:format)                                       admin/user_org_roles#new
+                edit_admin_user_org_role GET      /admin/user_org_roles/:id/edit(.:format)                                  admin/user_org_roles#edit
+                     admin_user_org_role GET      /admin/user_org_roles/:id(.:format)                                       admin/user_org_roles#show
+                                         PUT      /admin/user_org_roles/:id(.:format)                                       admin/user_org_roles#update
+                                         DELETE   /admin/user_org_roles/:id(.:format)                                       admin/user_org_roles#destroy
+                batch_action_admin_roles POST     /admin/roles/batch_action(.:format)                                       admin/roles#batch_action
+                             admin_roles GET      /admin/roles(.:format)                                                    admin/roles#index
+                                         POST     /admin/roles(.:format)                                                    admin/roles#create
+                          new_admin_role GET      /admin/roles/new(.:format)                                                admin/roles#new
+                         edit_admin_role GET      /admin/roles/:id/edit(.:format)                                           admin/roles#edit
+                              admin_role GET      /admin/roles/:id(.:format)                                                admin/roles#show
+                                         PUT      /admin/roles/:id(.:format)                                                admin/roles#update
+                                         DELETE   /admin/roles/:id(.:format)                                                admin/roles#destroy
+   batch_action_admin_organisation_types POST     /admin/organisation_types/batch_action(.:format)                          admin/organisation_types#batch_action
+                admin_organisation_types GET      /admin/organisation_types(.:format)                                       admin/organisation_types#index
+                                         POST     /admin/organisation_types(.:format)                                       admin/organisation_types#create
+             new_admin_organisation_type GET      /admin/organisation_types/new(.:format)                                   admin/organisation_types#new
+            edit_admin_organisation_type GET      /admin/organisation_types/:id/edit(.:format)                              admin/organisation_types#edit
+                 admin_organisation_type GET      /admin/organisation_types/:id(.:format)                                   admin/organisation_types#show
+                                         PUT      /admin/organisation_types/:id(.:format)                                   admin/organisation_types#update
+                                         DELETE   /admin/organisation_types/:id(.:format)                                   admin/organisation_types#destroy
+            batch_action_admin_guidances POST     /admin/guidances/batch_action(.:format)                                   admin/guidances#batch_action
+                         admin_guidances GET      /admin/guidances(.:format)                                                admin/guidances#index
+                                         POST     /admin/guidances(.:format)                                                admin/guidances#create
+                      new_admin_guidance GET      /admin/guidances/new(.:format)                                            admin/guidances#new
+                     edit_admin_guidance GET      /admin/guidances/:id/edit(.:format)                                       admin/guidances#edit
+                          admin_guidance GET      /admin/guidances/:id(.:format)                                            admin/guidances#show
+                                         PUT      /admin/guidances/:id(.:format)                                            admin/guidances#update
+                                         DELETE   /admin/guidances/:id(.:format)                                            admin/guidances#destroy
+        batch_action_admin_organisations POST     /admin/organisations/batch_action(.:format)                               admin/organisations#batch_action
+                     admin_organisations GET      /admin/organisations(.:format)                                            admin/organisations#index
+                                         POST     /admin/organisations(.:format)                                            admin/organisations#create
+                  new_admin_organisation GET      /admin/organisations/new(.:format)                                        admin/organisations#new
+                 edit_admin_organisation GET      /admin/organisations/:id/edit(.:format)                                   admin/organisations#edit
+                      admin_organisation GET      /admin/organisations/:id(.:format)                                        admin/organisations#show
+                                         PUT      /admin/organisations/:id(.:format)                                        admin/organisations#update
+                                         DELETE   /admin/organisations/:id(.:format)                                        admin/organisations#destroy
+     batch_action_admin_question_formats POST     /admin/question_formats/batch_action(.:format)                            admin/question_formats#batch_action
+                  admin_question_formats GET      /admin/question_formats(.:format)                                         admin/question_formats#index
+                                         POST     /admin/question_formats(.:format)                                         admin/question_formats#create
+               new_admin_question_format GET      /admin/question_formats/new(.:format)                                     admin/question_formats#new
+              edit_admin_question_format GET      /admin/question_formats/:id/edit(.:format)                                admin/question_formats#edit
+                   admin_question_format GET      /admin/question_formats/:id(.:format)                                     admin/question_formats#show
+                                         PUT      /admin/question_formats/:id(.:format)                                     admin/question_formats#update
+                                         DELETE   /admin/question_formats/:id(.:format)                                     admin/question_formats#destroy
+      batch_action_admin_user_role_types POST     /admin/user_role_types/batch_action(.:format)                             admin/user_role_types#batch_action
+                   admin_user_role_types GET      /admin/user_role_types(.:format)                                          admin/user_role_types#index
+                                         POST     /admin/user_role_types(.:format)                                          admin/user_role_types#create
+                new_admin_user_role_type GET      /admin/user_role_types/new(.:format)                                      admin/user_role_types#new
+               edit_admin_user_role_type GET      /admin/user_role_types/:id/edit(.:format)                                 admin/user_role_types#edit
+                    admin_user_role_type GET      /admin/user_role_types/:id(.:format)                                      admin/user_role_types#show
+                                         PUT      /admin/user_role_types/:id(.:format)                                      admin/user_role_types#update
+                                         DELETE   /admin/user_role_types/:id(.:format)                                      admin/user_role_types#destroy
+            batch_action_admin_questions POST     /admin/questions/batch_action(.:format)                                   admin/questions#batch_action
+                         admin_questions GET      /admin/questions(.:format)                                                admin/questions#index
+                                         POST     /admin/questions(.:format)                                                admin/questions#create
+                      new_admin_question GET      /admin/questions/new(.:format)                                            admin/questions#new
+                     edit_admin_question GET      /admin/questions/:id/edit(.:format)                                       admin/questions#edit
+                          admin_question GET      /admin/questions/:id(.:format)                                            admin/questions#show
+                                         PUT      /admin/questions/:id(.:format)                                            admin/questions#update
+                                         DELETE   /admin/questions/:id(.:format)                                            admin/questions#destroy
+               batch_action_admin_themes POST     /admin/themes/batch_action(.:format)                                      admin/themes#batch_action
+                            admin_themes GET      /admin/themes(.:format)                                                   admin/themes#index
+                                         POST     /admin/themes(.:format)                                                   admin/themes#create
+                         new_admin_theme GET      /admin/themes/new(.:format)                                               admin/themes#new
+                        edit_admin_theme GET      /admin/themes/:id/edit(.:format)                                          admin/themes#edit
+                             admin_theme GET      /admin/themes/:id(.:format)                                               admin/themes#show
+                                         PUT      /admin/themes/:id(.:format)                                               admin/themes#update
+                                         DELETE   /admin/themes/:id(.:format)                                               admin/themes#destroy
+             batch_action_admin_projects POST     /admin/projects/batch_action(.:format)                                    admin/projects#batch_action
+                          admin_projects GET      /admin/projects(.:format)                                                 admin/projects#index
+                                         POST     /admin/projects(.:format)                                                 admin/projects#create
+                       new_admin_project GET      /admin/projects/new(.:format)                                             admin/projects#new
+                      edit_admin_project GET      /admin/projects/:id/edit(.:format)                                        admin/projects#edit
+                           admin_project GET      /admin/projects/:id(.:format)                                             admin/projects#show
+                                         PUT      /admin/projects/:id(.:format)                                             admin/projects#update
+                                         DELETE   /admin/projects/:id(.:format)                                             admin/projects#destroy
+                    admin_admin_comments GET      /admin/admin_comments(.:format)                                           admin/admin_comments#index
+                                         POST     /admin/admin_comments(.:format)                                           admin/admin_comments#create
+                     admin_admin_comment GET      /admin/admin_comments/:id(.:format)                                       admin/admin_comments#show
+                                about_us GET      /about_us(.:format)                                                       static_pages#about_us
+                                    help GET      /help(.:format)                                                           static_pages#help
+                                 roadmap GET      /roadmap(.:format)                                                        static_pages#roadmap
+                                   terms GET      /terms(.:format)                                                          static_pages#termsuse
+                          existing_users GET      /existing_users(.:format)                                                 existing_users#index
+                         org_admin_users GET      /org/admin/users(.:format)                                                organisation_users#admin_index
+                   children_organisation GET      (/:locale)/org/admin/:id/children(.:format)                               organisations#children {:locale=>/en|fr/}
+                  templates_organisation GET      (/:locale)/org/admin/:id/templates(.:format)                              organisations#templates {:locale=>/en|fr/}
+                 admin_show_organisation GET      (/:locale)/org/admin/:id/admin_show(.:format)                             organisations#admin_show {:locale=>/en|fr/}
+                 admin_edit_organisation GET      (/:locale)/org/admin/:id/admin_edit(.:format)                             organisations#admin_edit {:locale=>/en|fr/}
+               admin_update_organisation PUT      (/:locale)/org/admin/:id/admin_update(.:format)                           organisations#admin_update {:locale=>/en|fr/}
+                           organisations GET      (/:locale)/org/admin(.:format)                                            organisations#index {:locale=>/en|fr/}
+                                         POST     (/:locale)/org/admin(.:format)                                            organisations#create {:locale=>/en|fr/}
+                        new_organisation GET      (/:locale)/org/admin/new(.:format)                                        organisations#new {:locale=>/en|fr/}
+                       edit_organisation GET      (/:locale)/org/admin/:id/edit(.:format)                                   organisations#edit {:locale=>/en|fr/}
+                            organisation GET      (/:locale)/org/admin/:id(.:format)                                        organisations#show {:locale=>/en|fr/}
+                                         PUT      (/:locale)/org/admin/:id(.:format)                                        organisations#update {:locale=>/en|fr/}
+                                         DELETE   (/:locale)/org/admin/:id(.:format)                                        organisations#destroy {:locale=>/en|fr/}
+                     admin_show_guidance GET      (/:locale)/org/admin/guidance/:id/admin_show(.:format)                    guidances#admin_show {:locale=>/en|fr/}
+                    admin_index_guidance GET      (/:locale)/org/admin/guidance/:id/admin_index(.:format)                   guidances#admin_index {:locale=>/en|fr/}
+                     admin_edit_guidance GET      (/:locale)/org/admin/guidance/:id/admin_edit(.:format)                    guidances#admin_edit {:locale=>/en|fr/}
+                      admin_new_guidance GET      (/:locale)/org/admin/guidance/:id/admin_new(.:format)                     guidances#admin_new {:locale=>/en|fr/}
+                  admin_destroy_guidance DELETE   (/:locale)/org/admin/guidance/:id/admin_destroy(.:format)                 guidances#admin_destroy {:locale=>/en|fr/}
+                   admin_create_guidance POST     (/:locale)/org/admin/guidance/:id/admin_create(.:format)                  guidances#admin_create {:locale=>/en|fr/}
+                   admin_update_guidance PUT      (/:locale)/org/admin/guidance/:id/admin_update(.:format)                  guidances#admin_update {:locale=>/en|fr/}
+                  update_phases_guidance GET      (/:locale)/org/admin/guidance/:id/update_phases(.:format)                 guidances#update_phases {:locale=>/en|fr/}
+                update_versions_guidance GET      (/:locale)/org/admin/guidance/:id/update_versions(.:format)               guidances#update_versions {:locale=>/en|fr/}
+                update_sections_guidance GET      (/:locale)/org/admin/guidance/:id/update_sections(.:format)               guidances#update_sections {:locale=>/en|fr/}
+               update_questions_guidance GET      (/:locale)/org/admin/guidance/:id/update_questions(.:format)              guidances#update_questions {:locale=>/en|fr/}
+                               guidances GET      (/:locale)/org/admin/guidance(.:format)                                   guidances#index {:locale=>/en|fr/}
+                                         POST     (/:locale)/org/admin/guidance(.:format)                                   guidances#create {:locale=>/en|fr/}
+                            new_guidance GET      (/:locale)/org/admin/guidance/new(.:format)                               guidances#new {:locale=>/en|fr/}
+                           edit_guidance GET      (/:locale)/org/admin/guidance/:id/edit(.:format)                          guidances#edit {:locale=>/en|fr/}
+                                guidance GET      (/:locale)/org/admin/guidance/:id(.:format)                               guidances#show {:locale=>/en|fr/}
+                                         PUT      (/:locale)/org/admin/guidance/:id(.:format)                               guidances#update {:locale=>/en|fr/}
+                                         DELETE   (/:locale)/org/admin/guidance/:id(.:format)                               guidances#destroy {:locale=>/en|fr/}
+               admin_show_guidance_group GET      (/:locale)/org/admin/guidancegroup/:id/admin_show(.:format)               guidance_groups#admin_show {:locale=>/en|fr/}
+                admin_new_guidance_group GET      (/:locale)/org/admin/guidancegroup/:id/admin_new(.:format)                guidance_groups#admin_new {:locale=>/en|fr/}
+               admin_edit_guidance_group GET      (/:locale)/org/admin/guidancegroup/:id/admin_edit(.:format)               guidance_groups#admin_edit {:locale=>/en|fr/}
+            admin_destroy_guidance_group DELETE   (/:locale)/org/admin/guidancegroup/:id/admin_destroy(.:format)            guidance_groups#admin_destroy {:locale=>/en|fr/}
+             admin_create_guidance_group POST     (/:locale)/org/admin/guidancegroup/:id/admin_create(.:format)             guidance_groups#admin_create {:locale=>/en|fr/}
+             admin_update_guidance_group PUT      (/:locale)/org/admin/guidancegroup/:id/admin_update(.:format)             guidance_groups#admin_update {:locale=>/en|fr/}
+                         guidance_groups GET      (/:locale)/org/admin/guidancegroup(.:format)                              guidance_groups#index {:locale=>/en|fr/}
+                                         POST     (/:locale)/org/admin/guidancegroup(.:format)                              guidance_groups#create {:locale=>/en|fr/}
+                      new_guidance_group GET      (/:locale)/org/admin/guidancegroup/new(.:format)                          guidance_groups#new {:locale=>/en|fr/}
+                     edit_guidance_group GET      (/:locale)/org/admin/guidancegroup/:id/edit(.:format)                     guidance_groups#edit {:locale=>/en|fr/}
+                          guidance_group GET      (/:locale)/org/admin/guidancegroup/:id(.:format)                          guidance_groups#show {:locale=>/en|fr/}
+                                         PUT      (/:locale)/org/admin/guidancegroup/:id(.:format)                          guidance_groups#update {:locale=>/en|fr/}
+                                         DELETE   (/:locale)/org/admin/guidancegroup/:id(.:format)                          guidance_groups#destroy {:locale=>/en|fr/}
+                                         POST     (/:locale)/organisation(.:format)                                         organisations#create {:locale=>/en|fr/}
+                                         GET      (/:locale)/organisation/new(.:format)                                     organisations#new {:locale=>/en|fr/}
+                                         GET      (/:locale)/organisation/edit(.:format)                                    organisations#edit {:locale=>/en|fr/}
+                                         GET      (/:locale)/organisation(.:format)                                         organisations#show {:locale=>/en|fr/}
+                                         PUT      (/:locale)/organisation(.:format)                                         organisations#update {:locale=>/en|fr/}
+                                         DELETE   (/:locale)/organisation(.:format)                                         organisations#destroy {:locale=>/en|fr/}
+                 admin_index_dmptemplate GET      (/:locale)/org/admin/templates/:id/admin_index(.:format)                  dmptemplates#admin_index {:locale=>/en|fr/}
+              admin_template_dmptemplate GET      (/:locale)/org/admin/templates/:id/admin_template(.:format)               dmptemplates#admin_template {:locale=>/en|fr/}
+                   admin_new_dmptemplate GET      (/:locale)/org/admin/templates/:id/admin_new(.:format)                    dmptemplates#admin_new {:locale=>/en|fr/}
+              admin_addphase_dmptemplate GET      (/:locale)/org/admin/templates/:id/admin_addphase(.:format)               dmptemplates#admin_addphase {:locale=>/en|fr/}
+                 admin_phase_dmptemplate GET      (/:locale)/org/admin/templates/:id/admin_phase(.:format)                  dmptemplates#admin_phase {:locale=>/en|fr/}
+          admin_previewphase_dmptemplate GET      (/:locale)/org/admin/templates/:id/admin_previewphase(.:format)           dmptemplates#admin_previewphase {:locale=>/en|fr/}
+          admin_cloneversion_dmptemplate GET      (/:locale)/org/admin/templates/:id/admin_cloneversion(.:format)           dmptemplates#admin_cloneversion {:locale=>/en|fr/}
+               admin_destroy_dmptemplate DELETE   (/:locale)/org/admin/templates/:id/admin_destroy(.:format)                dmptemplates#admin_destroy {:locale=>/en|fr/}
+        admin_destroyversion_dmptemplate DELETE   (/:locale)/org/admin/templates/:id/admin_destroyversion(.:format)         dmptemplates#admin_destroyversion {:locale=>/en|fr/}
+          admin_destroyphase_dmptemplate DELETE   (/:locale)/org/admin/templates/:id/admin_destroyphase(.:format)           dmptemplates#admin_destroyphase {:locale=>/en|fr/}
+        admin_destroysection_dmptemplate DELETE   (/:locale)/org/admin/templates/:id/admin_destroysection(.:format)         dmptemplates#admin_destroysection {:locale=>/en|fr/}
+       admin_destroyquestion_dmptemplate DELETE   (/:locale)/org/admin/templates/:id/admin_destroyquestion(.:format)        dmptemplates#admin_destroyquestion {:locale=>/en|fr/}
+admin_destroysuggestedanswer_dmptemplate DELETE   (/:locale)/org/admin/templates/:id/admin_destroysuggestedanswer(.:format) dmptemplates#admin_destroysuggestedanswer {:locale=>/en|fr/}
+                admin_create_dmptemplate POST     (/:locale)/org/admin/templates/:id/admin_create(.:format)                 dmptemplates#admin_create {:locale=>/en|fr/}
+           admin_createphase_dmptemplate POST     (/:locale)/org/admin/templates/:id/admin_createphase(.:format)            dmptemplates#admin_createphase {:locale=>/en|fr/}
+         admin_createsection_dmptemplate POST     (/:locale)/org/admin/templates/:id/admin_createsection(.:format)          dmptemplates#admin_createsection {:locale=>/en|fr/}
+        admin_createquestion_dmptemplate POST     (/:locale)/org/admin/templates/:id/admin_createquestion(.:format)         dmptemplates#admin_createquestion {:locale=>/en|fr/}
+ admin_createsuggestedanswer_dmptemplate POST     (/:locale)/org/admin/templates/:id/admin_createsuggestedanswer(.:format)  dmptemplates#admin_createsuggestedanswer {:locale=>/en|fr/}
+                admin_update_dmptemplate PUT      (/:locale)/org/admin/templates/:id/admin_update(.:format)                 dmptemplates#admin_update {:locale=>/en|fr/}
+           admin_updatephase_dmptemplate PUT      (/:locale)/org/admin/templates/:id/admin_updatephase(.:format)            dmptemplates#admin_updatephase {:locale=>/en|fr/}
+         admin_updateversion_dmptemplate PUT      (/:locale)/org/admin/templates/:id/admin_updateversion(.:format)          dmptemplates#admin_updateversion {:locale=>/en|fr/}
+         admin_updatesection_dmptemplate PUT      (/:locale)/org/admin/templates/:id/admin_updatesection(.:format)          dmptemplates#admin_updatesection {:locale=>/en|fr/}
+        admin_updatequestion_dmptemplate PUT      (/:locale)/org/admin/templates/:id/admin_updatequestion(.:format)         dmptemplates#admin_updatequestion {:locale=>/en|fr/}
+ admin_updatesuggestedanswer_dmptemplate PUT      (/:locale)/org/admin/templates/:id/admin_updatesuggestedanswer(.:format)  dmptemplates#admin_updatesuggestedanswer {:locale=>/en|fr/}
+                            dmptemplates GET      (/:locale)/org/admin/templates(.:format)                                  dmptemplates#index {:locale=>/en|fr/}
+                                         POST     (/:locale)/org/admin/templates(.:format)                                  dmptemplates#create {:locale=>/en|fr/}
+                         new_dmptemplate GET      (/:locale)/org/admin/templates/new(.:format)                              dmptemplates#new {:locale=>/en|fr/}
+                        edit_dmptemplate GET      (/:locale)/org/admin/templates/:id/edit(.:format)                         dmptemplates#edit {:locale=>/en|fr/}
+                             dmptemplate GET      (/:locale)/org/admin/templates/:id(.:format)                              dmptemplates#show {:locale=>/en|fr/}
+                                         PUT      (/:locale)/org/admin/templates/:id(.:format)                              dmptemplates#update {:locale=>/en|fr/}
+                                         DELETE   (/:locale)/org/admin/templates/:id(.:format)                              dmptemplates#destroy {:locale=>/en|fr/}
+                                  phases GET      (/:locale)/phases(.:format)                                               phases#index {:locale=>/en|fr/}
+                                         POST     (/:locale)/phases(.:format)                                               phases#create {:locale=>/en|fr/}
+                               new_phase GET      (/:locale)/phases/new(.:format)                                           phases#new {:locale=>/en|fr/}
+                              edit_phase GET      (/:locale)/phases/:id/edit(.:format)                                      phases#edit {:locale=>/en|fr/}
+                                   phase GET      (/:locale)/phases/:id(.:format)                                           phases#show {:locale=>/en|fr/}
+                                         PUT      (/:locale)/phases/:id(.:format)                                           phases#update {:locale=>/en|fr/}
+                                         DELETE   (/:locale)/phases/:id(.:format)                                           phases#destroy {:locale=>/en|fr/}
+                                versions GET      (/:locale)/versions(.:format)                                             versions#index {:locale=>/en|fr/}
+                                         POST     (/:locale)/versions(.:format)                                             versions#create {:locale=>/en|fr/}
+                             new_version GET      (/:locale)/versions/new(.:format)                                         versions#new {:locale=>/en|fr/}
+                            edit_version GET      (/:locale)/versions/:id/edit(.:format)                                    versions#edit {:locale=>/en|fr/}
+                                 version GET      (/:locale)/versions/:id(.:format)                                         versions#show {:locale=>/en|fr/}
+                                         PUT      (/:locale)/versions/:id(.:format)                                         versions#update {:locale=>/en|fr/}
+                                         DELETE   (/:locale)/versions/:id(.:format)                                         versions#destroy {:locale=>/en|fr/}
+                                sections GET      (/:locale)/sections(.:format)                                             sections#index {:locale=>/en|fr/}
+                                         POST     (/:locale)/sections(.:format)                                             sections#create {:locale=>/en|fr/}
+                             new_section GET      (/:locale)/sections/new(.:format)                                         sections#new {:locale=>/en|fr/}
+                            edit_section GET      (/:locale)/sections/:id/edit(.:format)                                    sections#edit {:locale=>/en|fr/}
+                                 section GET      (/:locale)/sections/:id(.:format)                                         sections#show {:locale=>/en|fr/}
+                                         PUT      (/:locale)/sections/:id(.:format)                                         sections#update {:locale=>/en|fr/}
+                                         DELETE   (/:locale)/sections/:id(.:format)                                         sections#destroy {:locale=>/en|fr/}
+                               questions GET      (/:locale)/questions(.:format)                                            questions#index {:locale=>/en|fr/}
+                                         POST     (/:locale)/questions(.:format)                                            questions#create {:locale=>/en|fr/}
+                            new_question GET      (/:locale)/questions/new(.:format)                                        questions#new {:locale=>/en|fr/}
+                           edit_question GET      (/:locale)/questions/:id/edit(.:format)                                   questions#edit {:locale=>/en|fr/}
+                                question GET      (/:locale)/questions/:id(.:format)                                        questions#show {:locale=>/en|fr/}
+                                         PUT      (/:locale)/questions/:id(.:format)                                        questions#update {:locale=>/en|fr/}
+                                         DELETE   (/:locale)/questions/:id(.:format)                                        questions#destroy {:locale=>/en|fr/}
+                         question_themes GET      (/:locale)/question_themes(.:format)                                      question_themes#index {:locale=>/en|fr/}
+                                         POST     (/:locale)/question_themes(.:format)                                      question_themes#create {:locale=>/en|fr/}
+                      new_question_theme GET      (/:locale)/question_themes/new(.:format)                                  question_themes#new {:locale=>/en|fr/}
+                     edit_question_theme GET      (/:locale)/question_themes/:id/edit(.:format)                             question_themes#edit {:locale=>/en|fr/}
+                          question_theme GET      (/:locale)/question_themes/:id(.:format)                                  question_themes#show {:locale=>/en|fr/}
+                                         PUT      (/:locale)/question_themes/:id(.:format)                                  question_themes#update {:locale=>/en|fr/}
+                                         DELETE   (/:locale)/question_themes/:id(.:format)                                  question_themes#destroy {:locale=>/en|fr/}
+                                  themes GET      (/:locale)/themes(.:format)                                               themes#index {:locale=>/en|fr/}
+                                         POST     (/:locale)/themes(.:format)                                               themes#create {:locale=>/en|fr/}
+                               new_theme GET      (/:locale)/themes/new(.:format)                                           themes#new {:locale=>/en|fr/}
+                              edit_theme GET      (/:locale)/themes/:id/edit(.:format)                                      themes#edit {:locale=>/en|fr/}
+                                   theme GET      (/:locale)/themes/:id(.:format)                                           themes#show {:locale=>/en|fr/}
+                                         PUT      (/:locale)/themes/:id(.:format)                                           themes#update {:locale=>/en|fr/}
+                                         DELETE   (/:locale)/themes/:id(.:format)                                           themes#destroy {:locale=>/en|fr/}
+                                 answers GET      (/:locale)/answers(.:format)                                              answers#index {:locale=>/en|fr/}
+                                         POST     (/:locale)/answers(.:format)                                              answers#create {:locale=>/en|fr/}
+                              new_answer GET      (/:locale)/answers/new(.:format)                                          answers#new {:locale=>/en|fr/}
+                             edit_answer GET      (/:locale)/answers/:id/edit(.:format)                                     answers#edit {:locale=>/en|fr/}
+                                  answer GET      (/:locale)/answers/:id(.:format)                                          answers#show {:locale=>/en|fr/}
+                                         PUT      (/:locale)/answers/:id(.:format)                                          answers#update {:locale=>/en|fr/}
+                                         DELETE   (/:locale)/answers/:id(.:format)                                          answers#destroy {:locale=>/en|fr/}
+                           plan_sections GET      (/:locale)/plan_sections(.:format)                                        plan_sections#index {:locale=>/en|fr/}
+                                         POST     (/:locale)/plan_sections(.:format)                                        plan_sections#create {:locale=>/en|fr/}
+                        new_plan_section GET      (/:locale)/plan_sections/new(.:format)                                    plan_sections#new {:locale=>/en|fr/}
+                       edit_plan_section GET      (/:locale)/plan_sections/:id/edit(.:format)                               plan_sections#edit {:locale=>/en|fr/}
+                            plan_section GET      (/:locale)/plan_sections/:id(.:format)                                    plan_sections#show {:locale=>/en|fr/}
+                                         PUT      (/:locale)/plan_sections/:id(.:format)                                    plan_sections#update {:locale=>/en|fr/}
+                                         DELETE   (/:locale)/plan_sections/:id(.:format)                                    plan_sections#destroy {:locale=>/en|fr/}
+                         archive_comment PUT      (/:locale)/comments/:id/archive(.:format)                                 comments#archive {:locale=>/en|fr/}
+                                comments GET      (/:locale)/comments(.:format)                                             comments#index {:locale=>/en|fr/}
+                                         POST     (/:locale)/comments(.:format)                                             comments#create {:locale=>/en|fr/}
+                             new_comment GET      (/:locale)/comments/new(.:format)                                         comments#new {:locale=>/en|fr/}
+                            edit_comment GET      (/:locale)/comments/:id/edit(.:format)                                    comments#edit {:locale=>/en|fr/}
+                                 comment GET      (/:locale)/comments/:id(.:format)                                         comments#show {:locale=>/en|fr/}
+                                         PUT      (/:locale)/comments/:id(.:format)                                         comments#update {:locale=>/en|fr/}
+                                         DELETE   (/:locale)/comments/:id(.:format)                                         comments#destroy {:locale=>/en|fr/}
+                     status_project_plan GET      (/:locale)/projects/:project_id/plans/:id/status(.:format)                plans#status {:locale=>/en|fr/}
+                     locked_project_plan GET      (/:locale)/projects/:project_id/plans/:id/locked(.:format)                plans#locked {:locale=>/en|fr/}
+                     answer_project_plan GET      (/:locale)/projects/:project_id/plans/:id/answer(.:format)                plans#answer {:locale=>/en|fr/}
+                       edit_project_plan GET      (/:locale)/projects/:project_id/plans/:id/edit(.:format)                  plans#edit {:locale=>/en|fr/}
+        delete_recent_locks_project_plan POST     (/:locale)/projects/:project_id/plans/:id/delete_recent_locks(.:format)   plans#delete_recent_locks {:locale=>/en|fr/}
+               lock_section_project_plan POST     (/:locale)/projects/:project_id/plans/:id/lock_section(.:format)          plans#lock_section {:locale=>/en|fr/}
+             unlock_section_project_plan POST     (/:locale)/projects/:project_id/plans/:id/unlock_section(.:format)        plans#unlock_section {:locale=>/en|fr/}
+        unlock_all_sections_project_plan POST     (/:locale)/projects/:project_id/plans/:id/unlock_all_sections(.:format)   plans#unlock_all_sections {:locale=>/en|fr/}
+                     export_project_plan GET      (/:locale)/projects/:project_id/plans/:id/export(.:format)                plans#export {:locale=>/en|fr/}
+                    warning_project_plan GET      (/:locale)/projects/:project_id/plans/:id/warning(.:format)               plans#warning {:locale=>/en|fr/}
+            section_answers_project_plan GET      (/:locale)/projects/:project_id/plans/:id/section_answers(.:format)       plans#section_answers {:locale=>/en|fr/}
+                           project_plans GET      (/:locale)/projects/:project_id/plans(.:format)                           plans#index {:locale=>/en|fr/}
+                                         POST     (/:locale)/projects/:project_id/plans(.:format)                           plans#create {:locale=>/en|fr/}
+                        new_project_plan GET      (/:locale)/projects/:project_id/plans/new(.:format)                       plans#new {:locale=>/en|fr/}
+                                         GET      (/:locale)/projects/:project_id/plans/:id/edit(.:format)                  plans#edit {:locale=>/en|fr/}
+                            project_plan GET      (/:locale)/projects/:project_id/plans/:id(.:format)                       plans#show {:locale=>/en|fr/}
+                                         PUT      (/:locale)/projects/:project_id/plans/:id(.:format)                       plans#update {:locale=>/en|fr/}
+                                         DELETE   (/:locale)/projects/:project_id/plans/:id(.:format)                       plans#destroy {:locale=>/en|fr/}
+                           share_project GET      (/:locale)/projects/:id/share(.:format)                                   projects#share {:locale=>/en|fr/}
+                          export_project GET      (/:locale)/projects/:id/export(.:format)                                  projects#export {:locale=>/en|fr/}
+                          invite_project POST     (/:locale)/projects/:id/invite(.:format)                                  projects#invite {:locale=>/en|fr/}
+                                 project POST     (/:locale)/projects/:id(.:format)                                         projects#create {:locale=>/en|fr/}
+             possible_templates_projects GET      (/:locale)/projects/possible_templates(.:format)                          projects#possible_templates {:locale=>/en|fr/}
+              possible_guidance_projects GET      (/:locale)/projects/possible_guidance(.:format)                           projects#possible_guidance {:locale=>/en|fr/}
+                                projects GET      (/:locale)/projects(.:format)                                             projects#index {:locale=>/en|fr/}
+                                         POST     (/:locale)/projects(.:format)                                             projects#create {:locale=>/en|fr/}
+                             new_project GET      (/:locale)/projects/new(.:format)                                         projects#new {:locale=>/en|fr/}
+                            edit_project GET      (/:locale)/projects/:id/edit(.:format)                                    projects#edit {:locale=>/en|fr/}
+                                         GET      (/:locale)/projects/:id(.:format)                                         projects#show {:locale=>/en|fr/}
+                                         PUT      (/:locale)/projects/:id(.:format)                                         projects#update {:locale=>/en|fr/}
+                                         DELETE   (/:locale)/projects/:id(.:format)                                         projects#destroy {:locale=>/en|fr/}
+                        project_partners GET      (/:locale)/project_partners(.:format)                                     project_partners#index {:locale=>/en|fr/}
+                                         POST     (/:locale)/project_partners(.:format)                                     project_partners#create {:locale=>/en|fr/}
+                     new_project_partner GET      (/:locale)/project_partners/new(.:format)                                 project_partners#new {:locale=>/en|fr/}
+                    edit_project_partner GET      (/:locale)/project_partners/:id/edit(.:format)                            project_partners#edit {:locale=>/en|fr/}
+                         project_partner GET      (/:locale)/project_partners/:id(.:format)                                 project_partners#show {:locale=>/en|fr/}
+                                         PUT      (/:locale)/project_partners/:id(.:format)                                 project_partners#update {:locale=>/en|fr/}
+                                         DELETE   (/:locale)/project_partners/:id(.:format)                                 project_partners#destroy {:locale=>/en|fr/}
+                          project_groups GET      (/:locale)/project_groups(.:format)                                       project_groups#index {:locale=>/en|fr/}
+                                         POST     (/:locale)/project_groups(.:format)                                       project_groups#create {:locale=>/en|fr/}
+                       new_project_group GET      (/:locale)/project_groups/new(.:format)                                   project_groups#new {:locale=>/en|fr/}
+                      edit_project_group GET      (/:locale)/project_groups/:id/edit(.:format)                              project_groups#edit {:locale=>/en|fr/}
+                           project_group GET      (/:locale)/project_groups/:id(.:format)                                   project_groups#show {:locale=>/en|fr/}
+                                         PUT      (/:locale)/project_groups/:id(.:format)                                   project_groups#update {:locale=>/en|fr/}
+                                         DELETE   (/:locale)/project_groups/:id(.:format)                                   project_groups#destroy {:locale=>/en|fr/}
+                                   users GET      (/:locale)/users(.:format)                                                users#index {:locale=>/en|fr/}
+                                         POST     (/:locale)/users(.:format)                                                users#create {:locale=>/en|fr/}
+                                new_user GET      (/:locale)/users/new(.:format)                                            users#new {:locale=>/en|fr/}
+                               edit_user GET      (/:locale)/users/:id/edit(.:format)                                       users#edit {:locale=>/en|fr/}
+                                    user GET      (/:locale)/users/:id(.:format)                                            users#show {:locale=>/en|fr/}
+                                         PUT      (/:locale)/users/:id(.:format)                                            users#update {:locale=>/en|fr/}
+                                         DELETE   (/:locale)/users/:id(.:format)                                            users#destroy {:locale=>/en|fr/}
+                           user_statuses GET      (/:locale)/user_statuses(.:format)                                        user_statuses#index {:locale=>/en|fr/}
+                                         POST     (/:locale)/user_statuses(.:format)                                        user_statuses#create {:locale=>/en|fr/}
+                         new_user_status GET      (/:locale)/user_statuses/new(.:format)                                    user_statuses#new {:locale=>/en|fr/}
+                        edit_user_status GET      (/:locale)/user_statuses/:id/edit(.:format)                               user_statuses#edit {:locale=>/en|fr/}
+                             user_status GET      (/:locale)/user_statuses/:id(.:format)                                    user_statuses#show {:locale=>/en|fr/}
+                                         PUT      (/:locale)/user_statuses/:id(.:format)                                    user_statuses#update {:locale=>/en|fr/}
+                                         DELETE   (/:locale)/user_statuses/:id(.:format)                                    user_statuses#destroy {:locale=>/en|fr/}
+                              user_types GET      (/:locale)/user_types(.:format)                                           user_types#index {:locale=>/en|fr/}
+                                         POST     (/:locale)/user_types(.:format)                                           user_types#create {:locale=>/en|fr/}
+                           new_user_type GET      (/:locale)/user_types/new(.:format)                                       user_types#new {:locale=>/en|fr/}
+                          edit_user_type GET      (/:locale)/user_types/:id/edit(.:format)                                  user_types#edit {:locale=>/en|fr/}
+                               user_type GET      (/:locale)/user_types/:id(.:format)                                       user_types#show {:locale=>/en|fr/}
+                                         PUT      (/:locale)/user_types/:id(.:format)                                       user_types#update {:locale=>/en|fr/}
+                                         DELETE   (/:locale)/user_types/:id(.:format)                                       user_types#destroy {:locale=>/en|fr/}
+                         user_role_types GET      (/:locale)/user_role_types(.:format)                                      user_role_types#index {:locale=>/en|fr/}
+                                         POST     (/:locale)/user_role_types(.:format)                                      user_role_types#create {:locale=>/en|fr/}
+                      new_user_role_type GET      (/:locale)/user_role_types/new(.:format)                                  user_role_types#new {:locale=>/en|fr/}
+                     edit_user_role_type GET      (/:locale)/user_role_types/:id/edit(.:format)                             user_role_types#edit {:locale=>/en|fr/}
+                          user_role_type GET      (/:locale)/user_role_types/:id(.:format)                                  user_role_types#show {:locale=>/en|fr/}
+                                         PUT      (/:locale)/user_role_types/:id(.:format)                                  user_role_types#update {:locale=>/en|fr/}
+                                         DELETE   (/:locale)/user_role_types/:id(.:format)                                  user_role_types#destroy {:locale=>/en|fr/}
+                          user_org_roles GET      (/:locale)/user_org_roles(.:format)                                       user_org_roles#index {:locale=>/en|fr/}
+                                         POST     (/:locale)/user_org_roles(.:format)                                       user_org_roles#create {:locale=>/en|fr/}
+                       new_user_org_role GET      (/:locale)/user_org_roles/new(.:format)                                   user_org_roles#new {:locale=>/en|fr/}
+                      edit_user_org_role GET      (/:locale)/user_org_roles/:id/edit(.:format)                              user_org_roles#edit {:locale=>/en|fr/}
+                           user_org_role GET      (/:locale)/user_org_roles/:id(.:format)                                   user_org_roles#show {:locale=>/en|fr/}
+                                         PUT      (/:locale)/user_org_roles/:id(.:format)                                   user_org_roles#update {:locale=>/en|fr/}
+                                         DELETE   (/:locale)/user_org_roles/:id(.:format)                                   user_org_roles#destroy {:locale=>/en|fr/}
+                      organisation_types GET      (/:locale)/organisation_types(.:format)                                   organisation_types#index {:locale=>/en|fr/}
+                                         POST     (/:locale)/organisation_types(.:format)                                   organisation_types#create {:locale=>/en|fr/}
+                   new_organisation_type GET      (/:locale)/organisation_types/new(.:format)                               organisation_types#new {:locale=>/en|fr/}
+                  edit_organisation_type GET      (/:locale)/organisation_types/:id/edit(.:format)                          organisation_types#edit {:locale=>/en|fr/}
+                       organisation_type GET      (/:locale)/organisation_types/:id(.:format)                               organisation_types#show {:locale=>/en|fr/}
+                                         PUT      (/:locale)/organisation_types/:id(.:format)                               organisation_types#update {:locale=>/en|fr/}
+                                         DELETE   (/:locale)/organisation_types/:id(.:format)                               organisation_types#destroy {:locale=>/en|fr/}
+                                   pages GET      (/:locale)/pages(.:format)                                                pages#index {:locale=>/en|fr/}
+                                         POST     (/:locale)/pages(.:format)                                                pages#create {:locale=>/en|fr/}
+                                new_page GET      (/:locale)/pages/new(.:format)                                            pages#new {:locale=>/en|fr/}
+                               edit_page GET      (/:locale)/pages/:id/edit(.:format)                                       pages#edit {:locale=>/en|fr/}
+                                    page GET      (/:locale)/pages/:id(.:format)                                            pages#show {:locale=>/en|fr/}
+                                         PUT      (/:locale)/pages/:id(.:format)                                            pages#update {:locale=>/en|fr/}
+                                         DELETE   (/:locale)/pages/:id(.:format)                                            pages#destroy {:locale=>/en|fr/}
+                              file_types GET      (/:locale)/file_types(.:format)                                           file_types#index {:locale=>/en|fr/}
+                                         POST     (/:locale)/file_types(.:format)                                           file_types#create {:locale=>/en|fr/}
+                           new_file_type GET      (/:locale)/file_types/new(.:format)                                       file_types#new {:locale=>/en|fr/}
+                          edit_file_type GET      (/:locale)/file_types/:id/edit(.:format)                                  file_types#edit {:locale=>/en|fr/}
+                               file_type GET      (/:locale)/file_types/:id(.:format)                                       file_types#show {:locale=>/en|fr/}
+                                         PUT      (/:locale)/file_types/:id(.:format)                                       file_types#update {:locale=>/en|fr/}
+                                         DELETE   (/:locale)/file_types/:id(.:format)                                       file_types#destroy {:locale=>/en|fr/}
+                            file_uploads GET      (/:locale)/file_uploads(.:format)                                         file_uploads#index {:locale=>/en|fr/}
+                                         POST     (/:locale)/file_uploads(.:format)                                         file_uploads#create {:locale=>/en|fr/}
+                         new_file_upload GET      (/:locale)/file_uploads/new(.:format)                                     file_uploads#new {:locale=>/en|fr/}
+                        edit_file_upload GET      (/:locale)/file_uploads/:id/edit(.:format)                                file_uploads#edit {:locale=>/en|fr/}
+                             file_upload GET      (/:locale)/file_uploads/:id(.:format)                                     file_uploads#show {:locale=>/en|fr/}
+                                         PUT      (/:locale)/file_uploads/:id(.:format)                                     file_uploads#update {:locale=>/en|fr/}
+                                         DELETE   (/:locale)/file_uploads/:id(.:format)                                     file_uploads#destroy {:locale=>/en|fr/}
+                       settings_projects POST     (/:locale)/settings/projects(.:format)                                    settings/projects#create {:locale=>/en|fr/}
+                   new_settings_projects GET      (/:locale)/settings/projects/new(.:format)                                settings/projects#new {:locale=>/en|fr/}
+                  edit_settings_projects GET      (/:locale)/settings/projects/edit(.:format)                               settings/projects#edit {:locale=>/en|fr/}
+                                         GET      (/:locale)/settings/projects(.:format)                                    settings/projects#show {:locale=>/en|fr/}
+                                         PUT      (/:locale)/settings/projects(.:format)                                    settings/projects#update {:locale=>/en|fr/}
+                                         DELETE   (/:locale)/settings/projects(.:format)                                    settings/projects#destroy {:locale=>/en|fr/}
+                          settings_plans GET      (/:locale)/settings/plans(.:format)                                       settings/plans#index {:locale=>/en|fr/}
+                                         POST     (/:locale)/settings/plans(.:format)                                       settings/plans#create {:locale=>/en|fr/}
+                       new_settings_plan GET      (/:locale)/settings/plans/new(.:format)                                   settings/plans#new {:locale=>/en|fr/}
+                      edit_settings_plan GET      (/:locale)/settings/plans/:id/edit(.:format)                              settings/plans#edit {:locale=>/en|fr/}
+                           settings_plan GET      (/:locale)/settings/plans/:id(.:format)                                   settings/plans#show {:locale=>/en|fr/}
+                                         PUT      (/:locale)/settings/plans/:id(.:format)                                   settings/plans#update {:locale=>/en|fr/}
+                                         DELETE   (/:locale)/settings/plans/:id(.:format)                                   settings/plans#destroy {:locale=>/en|fr/}
+                                         POST     /contacts(.:format)                                                       contact_us/contacts#create
+                                         GET      /contacts/new(.:format)                                                   contact_us/contacts#new
+                              contact_us GET      /contact-us(.:format)                                                     contact_us/contacts#new
