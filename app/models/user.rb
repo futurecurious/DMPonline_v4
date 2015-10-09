@@ -39,7 +39,6 @@ class User < ActiveRecord::Base
 
     accepts_nested_attributes_for :roles
     attr_accessible :role_ids
-
     attr_accessible :password_confirmation, :encrypted_password, :remember_me, :id, :email, :firstname, :last_login,
      :login_count, :orcid_id, :password, :shibboleth_id, :user_status_id,
      :surname, :user_type_id, :organisation_id, :skip_invitation, :other_organisation,

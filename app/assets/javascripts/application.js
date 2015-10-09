@@ -17,8 +17,6 @@
 //= require select2.min.js
 //= require jquery.placeholder.js
 
-
-
 $( document ).ready(function() {
 
 	$(function(){

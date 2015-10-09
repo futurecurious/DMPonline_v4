@@ -11,7 +11,7 @@
                    <% if I18n.locale == :en %>
                       <%= link_to "Version française", locale: "fr", :class => "btn header_button btn-primary" %>
                    <% elsif I18n.locale == :fr %>
-                       <%= link_to "English Version", locale: "end",  :class => "btn header_button btn-primary" %>
+                       <%= link_to "English Version", locale: "en",  :class => "btn header_button btn-primary" %>
                    <% end %>
                 </div>
 
@@ -78,7 +78,7 @@
 			                 
 	                <% else %>
 	                	<li>
-	                    	<%= link_to t("helpers.home"), root_path , :class => "btn header_button btn-primary"%>            
+	                    	<%= link_to t("helpers.home"), locale_root_path , :class => "btn header_button btn-primary"%>            
 	                	</li>
 	                <% end %>
 	           		<li>

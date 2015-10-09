@@ -3,7 +3,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   def shibboleth
     if user_signed_in? && current_user.shibboleth_id.present? && current_user.shibboleth_id.length > 0 then
       flash[:warning] = I18n.t('devise.failure.already_authenticated')
-      redirect_to root_path
+      redirect_to locale_root_path
     else
       auth = request.env['omniauth.auth'] || {}
       eppn = auth['extra']['raw_info']['eppn']
@@ -29,7 +29,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
 				if !s_user.nil? && s_user.try(:persisted?) then
 					flash[:notice] = I18n.t('devise.omniauth_callbacks.success', :kind => 'Shibboleth')
 					sign_in s_user
-          redirect_to root_path
+          redirect_to locale_root_path
 				else
 					if user_signed_in? then
 						current_user.update_attribute('shibboleth_id', uid)
@@ -46,8 +46,19 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
 					end
 				end
       else
-        redirect_to root_path
+        redirect_to locale_root_path
       end
     end
+  end
+  private
+
+  def handle_redirect(_session_variable,kind)
+    I18n.locale = session[:omniauth_login_locale] || I18n.default_locale
+    sign_in_and_redirect user, event: :authentication
+    set_flash_message(:notice, :success, kind: kind) if is_navigational_format
+  end
+ 
+  def user
+    User.find_for_oauth(env['omniauth.auth'], current_user)
   end
 end

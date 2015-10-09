@@ -6,11 +6,14 @@ module Settings
 
     def show
       respond_to do |format|
-        format.html
+        format.html 
         format.json { render json: settings_json }
       end
     end
 
+    def edit
+      show
+    end
     def update
       columns = (params[:columns] || {}).keys.map(&:intern)
 
