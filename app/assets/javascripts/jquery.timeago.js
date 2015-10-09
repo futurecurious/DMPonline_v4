@@ -36,7 +36,9 @@
   };
   var $t = $.timeago;
 
-  $.extend($.timeago, {
+  $.extend($.timeago, 
+
+    {
     settings: {
       refreshMillis: 60000,
       allowFuture: false,

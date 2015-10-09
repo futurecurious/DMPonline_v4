@@ -15,9 +15,6 @@ module ApplicationHelper
 	  content_for(:head) { javascript_include_tag(*files) }
 	end
 
-        def devise_error_messages!
-          resource.errors.full_messages.map { |msg| content_tag(:li, msg) }.join
-        end 
 	def link_to_add_object(name, f, association, css_class)
         new_object = f.object.class.reflect_on_association(association).klass.new
         fields = f.fields_for(association, new_object, :child_index => "new_#{association}") do |builder|

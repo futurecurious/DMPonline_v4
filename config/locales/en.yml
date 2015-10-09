@@ -1,4 +1,12 @@
 en:
+  activerecord:
+    errors:
+      messages:
+        record_invalid:
+          email: "Embial can't be balml"
+          password: "passdfsd"
+          password_confirmation: "sdfsdhkfs"
+    
   date:
     formats:
       # Use the strftime parameters for formats.
