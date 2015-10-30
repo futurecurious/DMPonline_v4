@@ -612,7 +612,7 @@ Sélectionnez le format que vous souhaitez utiliser et cliquez sur « Exporter �
         font: "Police"
         font_face: "Caractère"
         font_size: "Taille"
-        margin: "Marge"
+        margin: "Marges"
         margins:
           top: "Haut"
           bottom: "Bas"
